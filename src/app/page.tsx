@@ -5,7 +5,7 @@ import pwd from '../../public/pwd.svg';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center p-24 gap-4">
       <InputText
         type="text"
         variant={'orange'}
@@ -18,7 +18,7 @@ export default function Home() {
         variant={'default'}
         shadow={'default'}
         label="아이디 입력"
-        icon={<Image src={pwd} width={12} height={16} alt="icon" />}
+        icon={<Image src={pwd} width={12} height={12} alt="icon" />}
       />
     </main>
   );

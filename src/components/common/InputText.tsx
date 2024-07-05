@@ -13,7 +13,7 @@ interface InputProps {
 
 export const InputVariants = cva(
   //모든 경우에 공통으로 들어갈 CSS
-  'h-[49px] bg-white text-[#C7C7CC] rounded-md px-2 border flex gap-4 items-center',
+  'h-[49px] w-[300px] bg-white text-[#C7C7CC] rounded-md px-2 border flex gap-4 items-center',
   {
     variants: {
       variant: {
@@ -42,7 +42,7 @@ const InputText = ({
 }: InputProps) => {
   return (
     <div className={cn(InputVariants({ variant, shadow }), additionalClass)}>
-      <div>{icon}</div>
+      <div className="w-[30px] flex justify-center items-center">{icon}</div>
       <input
         type={type}
         placeholder={label}
