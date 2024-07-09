@@ -1,8 +1,8 @@
 'use client';
 import Image from 'next/image';
 import InputText from '../components/common/InputText';
-import email from '../../public/email.svg';
-import pwd from '../../public/pwd.svg';
+import email from '../../public/icon/icon_email.svg';
+import pwd from '../../public/icon/icon_pwd.svg';
 import Checkbox from '../components/common/Checkbox';
 import { useState } from 'react';
 

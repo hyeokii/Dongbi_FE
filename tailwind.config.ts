@@ -26,12 +26,9 @@ const config: Config = {
         150: '1.5',
       },
       backgroundImage: {
-        // eslint-disable-next-line quotes
-        'square-check':
-          // eslint-disable-next-line quotes
-          "url('@/public/squareCheck.png')",
-        // eslint-disable-next-line quotes
-        'circle-check': "url('@/public/circleCheck.png')",
+        'square-check-yes': "url('/icon/icon_square_check_Y.svg')",
+        'square-check-no': "url('/icon/icon_square_check_N.svg')",
+        'circle-check-yes': "url('@/public/icon/icon_square_check_Y.svg')",
       },
     },
   },
