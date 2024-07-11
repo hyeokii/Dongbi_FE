@@ -37,29 +37,41 @@ export default function Home() {
       />
       <CommonButton
         text="Button 1"
-        bgColor="bg-custom-orange"
-        textColor="text-custom-white"
-        radius="rounded-[20px]"
-        shadowColor="shadow-custom-shadow-light"
-        fontSize="text-16"
+        bgColor="orange"
+        textColor="white"
+        radius="moreRounded"
+        shadowColor="lightShadow"
+        fontSize="lg"
+        additionalClass="w-[197px] h-[45px] "
       />
       <CommonButton
         text="Button 2"
-        bgColor="bg-custom-white"
-        textColor="text-custom-black"
-        radius="rounded-[6.25px]"
-        shadowColor="shadow-custom-shadow"
-        borderColor="border-custom-border"
-        fontSize="text-14"
-      />
+        bgColor="white"
+        textColor="black"
+        radius="moreRounded"
+        shadowColor="lightShadow"
+        borderColor="lightBorder"
+        fontSize="sm"
+        additionalClass="w-[197px] h-[45px]"
+      />{' '}
       <CommonButton
         text="Button 3"
-        bgColor="bg-custom-white"
-        textColor="text-custom-black"
-        radius="rounded-[20px]"
-        shadowColor="shadow-custom-shadow-light"
-        borderColor="border-custom-border"
-        fontSize="text-16"
+        bgColor="orange"
+        textColor="white"
+        radius="moreRounded"
+        shadowColor="lightShadow"
+        fontSize="sm"
+        additionalClass="w-[71px] h-[36px]"
+      />
+      <CommonButton
+        text="Button 4"
+        bgColor="white"
+        textColor="black"
+        radius="moreRounded"
+        shadowColor="lightShadow"
+        borderColor="lightBorder"
+        fontSize="sm"
+        additionalClass="w-[71px] h-[36px] "
       />
     </main>
   );
