@@ -51,9 +51,9 @@ export default function Home() {
         radius="moreRounded"
         shadowColor="lightShadow"
         borderColor="lightBorder"
-        fontSize="sm"
+        fontSize="lg"
         additionalClass="w-[197px] h-[45px]"
-      />{' '}
+      />
       <CommonButton
         text="Button 3"
         bgColor="orange"

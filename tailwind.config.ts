@@ -13,8 +13,6 @@ const config: Config = {
         white: '#FFFFFF',
         black: '#000000',
         'custom-orange': '#FF7D45',
-        'custom-white': '#FFFFFF',
-        'custom-black': '#000000',
         'custom-shadow': '#FFEBE2',
         'custom-border': '#FFEBE2',
         'custom-shadow-light': '#FFF7E0',

@@ -2,11 +2,6 @@ import React from 'react';
 import { cva } from 'class-variance-authority';
 import cn from '@/src/utils/cn';
 
-// 197 45
-// 441 45
-// 71 36
-// 127 49
-
 interface CommonButtonProps {
   text: string;
   bgColor: 'orange' | 'white';
@@ -22,11 +17,11 @@ export const buttonVariants = cva('py-2 font-semibold', {
   variants: {
     bgColor: {
       orange: 'bg-custom-orange',
-      white: 'bg-custom-white',
+      white: 'bg-white',
     },
     textColor: {
-      white: 'text-custom-white',
-      black: 'text-custom-black',
+      white: 'text-white',
+      black: 'text-black',
     },
     radius: {
       lessRounded: 'rounded-[6.25px]',
@@ -40,8 +35,8 @@ export const buttonVariants = cva('py-2 font-semibold', {
       lightBorder: 'border-1 border-custom-border',
     },
     fontSize: {
-      lg: 'text-16',
-      sm: 'text-14',
+      lg: 'text-lg',
+      sm: 'text-sm',
     },
   },
   defaultVariants: {
