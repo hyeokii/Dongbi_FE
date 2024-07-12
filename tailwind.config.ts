@@ -9,7 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '',
+        primary: '#FF7D45',
+        white: '#FFFFFF',
+        black: '#000000',
+        'custom-orange': '#FF7D45',
+        'custom-shadow': '#FFEBE2',
+        'custom-border': '#FFEBE2',
+        'custom-shadow-light': '#FFF7E0',
       },
       fontSize: {
         11: '11px',
@@ -19,11 +25,21 @@ const config: Config = {
         18: '18px',
         20: '20px',
       },
+      borderRadius: {
+        'rounded-[6.25px]': '6.25px',
+        'rounded-[20px]': '20px',
+      },
       lineHeight: {
         120: '1.2',
         130: '1.3',
         140: '1.4',
         150: '1.5',
+      },
+      boxShadow: {
+        'custom-shadow':
+          '0 4px 6px -1px rgba(255, 123, 69, 0.1), 0 2px 4px -1px rgba(255, 123, 69, 0.06)',
+        'custom-shadow-light':
+          '0 4px 6px -1px rgba(255, 247, 224, 0.1), 0 2px 4px -1px rgba(255, 247, 224, 0.06)',
       },
       backgroundImage: {
         'square-check-yes': "url('/icon/icon_square_check_Y.svg')",

@@ -5,6 +5,7 @@ import email from '../../public/icon/icon_email.svg';
 import pwd from '../../public/icon/icon_pwd.svg';
 import Checkbox from '../components/common/Checkbox';
 import { useState } from 'react';
+import CommonButton from '../components/common/CommonButton';
 
 export default function Home() {
   const [isChecked, setIsChecked] = useState(false);
@@ -33,6 +34,44 @@ export default function Home() {
         isDisabled={false}
         isChecked={isChecked}
         onChange={handleCheckboxChange}
+      />
+      <CommonButton
+        text="Button 1"
+        bgColor="orange"
+        textColor="white"
+        radius="moreRounded"
+        shadowColor="lightShadow"
+        fontSize="lg"
+        additionalClass="w-[197px] h-[45px] "
+      />
+      <CommonButton
+        text="Button 2"
+        bgColor="white"
+        textColor="black"
+        radius="moreRounded"
+        shadowColor="lightShadow"
+        borderColor="lightBorder"
+        fontSize="lg"
+        additionalClass="w-[197px] h-[45px]"
+      />
+      <CommonButton
+        text="Button 3"
+        bgColor="orange"
+        textColor="white"
+        radius="moreRounded"
+        shadowColor="lightShadow"
+        fontSize="sm"
+        additionalClass="w-[71px] h-[36px]"
+      />
+      <CommonButton
+        text="Button 4"
+        bgColor="white"
+        textColor="black"
+        radius="moreRounded"
+        shadowColor="lightShadow"
+        borderColor="lightBorder"
+        fontSize="sm"
+        additionalClass="w-[71px] h-[36px] "
       />
     </main>
   );
