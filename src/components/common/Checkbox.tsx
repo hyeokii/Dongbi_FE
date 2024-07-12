@@ -20,7 +20,7 @@ const Checkbox = ({
           disabled={isDisabled}
           checked={isChecked}
           onChange={onChange}
-          className="w-4 h-4 bg-square-check-no appearance-none  disabled bg-cover checked:bg-square-check-yes checked:border-none "
+          className="w-4 h-4 bg-contain bg-no-repeat bg-square-check-no appearance-none disabled checked:bg-square-check-yes checked:border-none !bg-no-repeat"
         />
       </label>
     </div>
