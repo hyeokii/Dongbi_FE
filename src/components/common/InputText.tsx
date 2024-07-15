@@ -9,6 +9,9 @@ interface InputProps {
   icon?: React.ReactElement;
   additionalClass?: string;
   type: string;
+  id: string;
+  value: any;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const InputVariants = cva(
@@ -39,6 +42,9 @@ const InputText = ({
   label,
   icon,
   additionalClass,
+  id,
+  value,
+  onChange,
 }: InputProps) => {
   return (
     <div className={cn(InputVariants({ variant, shadow }), additionalClass)}>
@@ -46,7 +52,10 @@ const InputText = ({
       <input
         type={type}
         placeholder={label}
+        id={id}
+        value={value}
         className="outline-none text-sm "
+        onChange={onChange}
       />
     </div>
   );
