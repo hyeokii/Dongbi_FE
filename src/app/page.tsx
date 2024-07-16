@@ -11,6 +11,7 @@ import { useState } from 'react';
 export default function Home() {
   const [isChecked, setIsChecked] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false);
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked);
   };
@@ -53,6 +54,10 @@ export default function Home() {
           shadowColor="lightShadow"
           fontSize="lg"
           additionalClass="w-[197px] h-[45px] "
+          onClickEvent={() => {
+            setButtonClicked(!buttonClicked);
+            alert(`buttonClicked : ${buttonClicked}\n버튼이 클릭되었습니다`);
+          }}
         />
         <CommonButton
           text="Button 2"
@@ -63,6 +68,10 @@ export default function Home() {
           borderColor="lightBorder"
           fontSize="lg"
           additionalClass="w-[197px] h-[45px]"
+          onClickEvent={() => {
+            setButtonClicked(!buttonClicked);
+            alert(`buttonClicked : ${buttonClicked}\n버튼이 클릭되었습니다`);
+          }}
         />
         <CommonButton
           text="Button 3"
@@ -72,6 +81,10 @@ export default function Home() {
           shadowColor="lightShadow"
           fontSize="sm"
           additionalClass="w-[71px] h-[36px]"
+          onClickEvent={() => {
+            setButtonClicked(!buttonClicked);
+            alert(`buttonClicked : ${buttonClicked}\n버튼이 클릭되었습니다`);
+          }}
         />
         <CommonButton
           text="Button 4"
@@ -82,6 +95,10 @@ export default function Home() {
           borderColor="lightBorder"
           fontSize="sm"
           additionalClass="w-[71px] h-[36px] "
+          onClickEvent={() => {
+            setButtonClicked(!buttonClicked);
+            alert(`buttonClicked : ${buttonClicked}\n버튼이 클릭되었습니다`);
+          }}
         />
         <h1 onClick={() => setToggle(true)}>모달 열기</h1>
       </main>
