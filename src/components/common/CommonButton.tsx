@@ -11,6 +11,7 @@ interface CommonButtonProps {
   borderColor?: 'lightBorder' | null | undefined;
   fontSize: 'sm' | 'lg';
   additionalClass?: string;
+  onClickEvent?: React.MouseEventHandler<HTMLButtonElement>; // onClick 타입
 }
 
 export const buttonVariants = cva('py-2 font-semibold', {
@@ -57,9 +58,11 @@ const CommonButton = ({
   borderColor,
   fontSize,
   additionalClass,
+  onClickEvent,
 }: CommonButtonProps) => {
   return (
     <button
+      onClick={onClickEvent}
       className={cn(
         buttonVariants({
           bgColor,
