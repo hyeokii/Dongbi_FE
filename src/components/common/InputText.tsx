@@ -11,7 +11,7 @@ interface InputProps {
   type: string;
   id: string;
   value: any;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const InputVariants = cva(

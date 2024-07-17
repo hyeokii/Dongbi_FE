@@ -22,7 +22,7 @@ const Login = () => {
   };
 
   const handleLogin = () => {
-    console.log('Logging in with:', { email, password });
+    alert(`Logging in with: ${email}, ${password}`);
   };
 
   return (
@@ -74,8 +74,6 @@ const Login = () => {
           onChange={handlePasswordChange}
         />
       </form>
-      {email}
-      {password}
 
       <div className="flex justify-end mt-2 text-11 text-[#767676] pointer w-[331px]">
         <Link href={'/'}> Forgot password?</Link>
@@ -89,6 +87,7 @@ const Login = () => {
         shadowColor="lightShadow"
         fontSize="sm"
         additionalClass="w-[331px] h-[45px] mt-6"
+        onClickEvent={handleLogin}
       />
     </div>
   );
