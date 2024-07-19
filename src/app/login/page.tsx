@@ -26,7 +26,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen w-72 mx-auto pt-36 items-center flex flex-col ">
+    <div className="min-h-screen w-72 m-auto pb-[15%] justify-center items-center flex flex-col ">
       <div>
         <Image
           src={coins}
