@@ -11,6 +11,7 @@ interface InputProps {
   type: string;
   id: string;
   value: any;
+  disable?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -44,6 +45,7 @@ const InputText = ({
   additionalClass,
   id,
   value,
+  disable = false,
   onChange,
 }: InputProps) => {
   return (
@@ -54,8 +56,13 @@ const InputText = ({
         placeholder={label}
         id={id}
         value={value}
-        className="outline-none text-sm "
+        className={
+          disable
+            ? 'outline-none text-sm bg-gray-200 cursor-not-allowed'
+            : 'outline-none text-sm '
+        }
         onChange={onChange}
+        disabled={disable}
       />
     </div>
   );

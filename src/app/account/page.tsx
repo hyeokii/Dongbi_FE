@@ -153,9 +153,10 @@ const page = () => {
                 value={formValues.checkPwd}
                 variant={'default'}
                 shadow={'default'}
-                label="이메일"
+                label="기존 이메일 주소"
                 icon={<Image src={email} width={12} height={12} alt="icon" />}
-                additionalClass="w-[331px]"
+                disable={true}
+                additionalClass="w-[331px] cursor-not-allowed bg-gray-200"
                 onChange={handleChange}
               />
               <CommonButton
@@ -171,16 +172,50 @@ const page = () => {
                 }}
               />
             </div>
+            <div className="relative w-[331px] ">
+              <InputText
+                type="text"
+                id="prevPwd"
+                value={formValues.prevPwd}
+                variant={'default'}
+                shadow={'default'}
+                label="새 이메일 주소"
+                icon={<Image src={email} width={12} height={12} alt="icon" />}
+                additionalClass="w-full"
+                onChange={handleChange}
+              />
+              <button className="absolute right-2 top-0 h-full text-[14px] text-gray-400">
+                인증
+              </button>
+            </div>
+
             <InputText
               type="text"
               id="prevPwd"
               value={formValues.prevPwd}
               variant={'default'}
               shadow={'default'}
-              label="이메일 확인"
+              label="인증 메일"
               icon={<Image src={email} width={12} height={12} alt="icon" />}
               additionalClass="w-[331px]"
               onChange={handleChange}
+            />
+          </div>
+        </div>
+        <div className="w-full flex items-center pl-6 justify-between pt-10">
+          <div className="w-[115px] font-bold">회원 탈퇴</div>
+          <div className="flex">
+            <CommonButton
+              text="탈퇴하기"
+              bgColor="orange"
+              textColor="white"
+              radius="lessRounded"
+              shadowColor="lightShadow"
+              fontSize="sm"
+              additionalClass="w-[127px] h-[49px] "
+              onClickEvent={() => {
+                alert(`buttonClicked : 버튼이 클릭되었습니다`);
+              }}
             />
           </div>
         </div>
