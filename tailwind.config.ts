@@ -16,6 +16,8 @@ const config: Config = {
         'custom-shadow': '#FFEBE2',
         'custom-border': '#FFEBE2',
         'custom-shadow-light': '#FFF7E0',
+        'custom-gray-2': '#AEAEB2',
+        'custom-gray-6': '#E5E5EA',
       },
       fontSize: {
         11: '11px',

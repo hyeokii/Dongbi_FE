@@ -28,6 +28,7 @@ const Home = () => {
 
   return (
     <div className="w-full pb-[15%] justify-center items-center flex flex-col">
+      <Header />
       <UpperBox />
 
       {/* <form>

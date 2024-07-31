@@ -10,7 +10,6 @@ const UpperBox = () => {
   const [generation, setGeneration] = useState('');
   return (
     <div className={UpperBoxContainer}>
-      <Header />
       <div className={GenerationText}>clubname generation기</div>
     </div>
   );
