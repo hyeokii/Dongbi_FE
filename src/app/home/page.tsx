@@ -9,7 +9,7 @@ import PlusModal from './components/PlusModal';
 
 const Home = () => {
   const [addModalToggle, setAddModalToggle] = useState(false);
-  const [minusModalToggle, setMinusModalToggle] = useState(true);
+  const [minusModalToggle, setMinusModalToggle] = useState(false);
 
   return (
     <div className="w-full pb-[15%] justify-center items-center flex flex-col">
