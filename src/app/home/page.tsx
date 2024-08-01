@@ -12,7 +12,7 @@ const Home = () => {
   const [minusModalToggle, setMinusModalToggle] = useState(false);
 
   return (
-    <div className="w-full pb-[15%] justify-center items-center flex flex-col">
+    <div className="w-full min-w-[800px] pb-[15%] justify-center items-center flex flex-col">
       <Header />
       <UpperBox
         setAddModalToggle={setAddModalToggle}
