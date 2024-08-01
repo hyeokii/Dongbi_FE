@@ -7,11 +7,11 @@ import IconGenerationManage from './IconComponents/IconGenerationManage';
 import IconNewGeneration from './IconComponents/IconNewGeneration';
 
 const HamburgerMenuContainer =
-  'absolute right-[20px] w-[199px] pt-[7px] pb-[7px] pl-[6px] pr-[6px] bg-white rounded-[5px] flex flex-col border border-custom-gray-6 drop-shadow-lg';
+  'absolute right-[20px] w-[199px] pt-[7px] pb-[7px] pl-[6px] pr-[6px] bg-white rounded-[5px] flex flex-col border border-custom-gray-5 drop-shadow-lg';
 const MenuContainer =
-  'w-[187px] h-[57px] rounded-[5px] ml-auto mr-auto flex items-center w-full px-3 text-[17px] text-custom-gray-2 cursor-pointer hover:bg-custom-gray-6 hover:text-black';
+  'w-[187px] h-[57px] rounded-[5px] ml-auto mr-auto flex items-center w-full px-3 text-[17px] text-custom-gray-2 cursor-pointer hover:bg-custom-gray-5 hover:text-black';
 const LogoutButtonContainer =
-  'w-[187px] h-[57px] rounded-[5px] ml-auto mr-auto flex items-center w-full px-3 text-[17px] text-red-500 cursor-pointer hover:bg-custom-gray-6 hover:text-red-700';
+  'w-[187px] h-[57px] rounded-[5px] ml-auto mr-auto flex items-center w-full px-3 text-[17px] text-red-500 cursor-pointer hover:bg-custom-gray-5 hover:text-red-700';
 
 const HamburgerMenu = () => {
   return (
