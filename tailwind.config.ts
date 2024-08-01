@@ -30,9 +30,11 @@ const config: Config = {
         14: '14px',
         15: '15px',
         16: '16px',
+        17: '17px',
         18: '18px',
         20: '20px',
         24: '24px',
+        40: '40px',
       },
       borderRadius: {
         'rounded-[6.25px]': '6.25px',
