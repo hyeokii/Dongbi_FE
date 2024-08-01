@@ -13,6 +13,8 @@ const config: Config = {
         white: '#FFFFFF',
         black: '#000000',
         'custom-black': '#2E2E2E',
+        'custom-red': '#F45959',
+        'custom-blue': '#257CFE',
         'custom-orange': '#FF7D45',
         'custom-orange-light': '#FFCFBC',
         'custom-shadow': '#FFEBE2',

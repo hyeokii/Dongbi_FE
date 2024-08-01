@@ -9,6 +9,7 @@ import Link from 'next/link';
 import CommonButton from '@/src/components/common/CommonButton';
 import Header from '../shared/Header';
 import UpperBox from './components/UpperBox';
+import AddMinusLog from './components/AddMinusLog';
 
 const Home = () => {
   const [email, setEmail] = useState('');
@@ -30,7 +31,7 @@ const Home = () => {
     <div className="w-full pb-[15%] justify-center items-center flex flex-col">
       <Header />
       <UpperBox />
-
+      <AddMinusLog />
       {/* <form>
         <InputText
           type="email"
