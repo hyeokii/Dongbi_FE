@@ -14,9 +14,9 @@ const modalOverlay =
   'fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50';
 
 const modalContent =
-  'w-[60vw] min-h-[300px] px-[58px] py-[57.26px] bg-white rounded-lg font-noto-sans-kr text-base relative flex flex-col justify-center items-center z-50';
+  'w-[768px] min-h-[300px] px-[58px] py-[57.26px] bg-white rounded-lg font-noto-sans-kr text-base relative flex flex-col justify-center items-center z-50';
 
-const closeButton = 'absolute cursor-pointer w-26.26 h-26.26';
+const closeButton = 'absolute cursor-pointer w-26.26 h-26.26 drop-shadow-md';
 
 const CommonModal = ({ setToggle, goBack, content }: CommonModalProps) => {
   return (
