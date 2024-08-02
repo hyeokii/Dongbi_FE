@@ -5,7 +5,7 @@ import Logo from '@/public/icon/icon_logo.svg';
 import coins from '@/public/icon/icon_coins.svg';
 import InputText from '@/src/components/common/InputText';
 import emailIcon from '@/public/icon/icon_email.svg';
-import pwdIcon from '@/public/icon/icon_pwd_gray.svg';
+import pwdIcon from '@/public/icon/icon_pwd.svg';
 import Link from 'next/link';
 import CommonButton from '@/src/components/common/CommonButton';
 
@@ -56,7 +56,7 @@ const Login = () => {
           variant={'orange'}
           shadow={'lg'}
           label="이메일"
-          icon={<Image src={emailIcon} width={24} height={24} alt="email" />}
+          icon={<Image src={emailIcon} width={16} height={16} alt="email" />}
           additionalClass="mb-5 w-[331px] h-[45px]"
           id="email"
           value={email}
@@ -67,7 +67,7 @@ const Login = () => {
           variant={'orange'}
           shadow={'lg'}
           label="비밀번호"
-          icon={<Image src={pwdIcon} width={24} height={24} alt="pwd" />}
+          icon={<Image src={pwdIcon} width={16} height={16} alt="pwd" />}
           additionalClass=" w-[331px] h-[45px]"
           id="password"
           value={password}
