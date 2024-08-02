@@ -26,7 +26,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen w-72 m-auto pb-[15%] justify-center items-center flex flex-col ">
+    <div className="bg-gradient-to-b from-[#FFEDE3] from-5% via-[#FFFCF6] via-20% to-white to-75% min-h-screen w-full m-auto pb-[15%] justify-center items-center flex flex-col ">
       <div>
         <Image
           src={coins}
