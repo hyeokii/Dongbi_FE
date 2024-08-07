@@ -23,7 +23,7 @@ const MinusModalStep0: React.FC<ReceiptScanStep1Props> = ({ setStep }) => {
         <div className={ScanReceiptContainer} onClick={() => setStep(1)}>
           <Image src={ScanReceipt} width={200} height={200} alt="영수증 스캔" />
         </div>
-        <div className={RegisterReceiptContainer}>
+        <div className={RegisterReceiptContainer} onClick={() => setStep(3)}>
           <Image
             src={RegisterReceipt}
             width={200}

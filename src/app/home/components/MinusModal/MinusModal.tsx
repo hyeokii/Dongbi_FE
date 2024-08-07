@@ -6,6 +6,7 @@ import RegisterReceipt from '@/public/icon/icon_register_receipt.svg';
 import ReceiptScanStep1 from './ReceiptScanStep1';
 import MinusModalStep0 from './MinusModalStep0';
 import ReceiptScanStep2 from './ReceiptScanStep2';
+import ManualStep1 from './ManualStep1';
 
 const MinusModalContainer = 'flex flex-col items-center';
 
@@ -33,6 +34,16 @@ const MinusModal = () => {
             setStep={setStep}
             receiptImage={receiptImage}
             receiptPreview={receiptPreview}
+          />
+        );
+      case 3:
+        return (
+          <ManualStep1
+            setStep={setStep}
+            receiptImage={receiptImage}
+            receiptPreview={receiptPreview}
+            setReceiptImage={setReceiptImage}
+            setReceiptPreview={setReceiptPreview}
           />
         );
     }
