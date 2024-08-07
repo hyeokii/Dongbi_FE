@@ -20,7 +20,8 @@ export default function Home() {
       {toggle && (
         <CommonModal
           setToggle={setToggle}
-          goBack={true}
+          goBack={false}
+          close={false}
           content={<div>모달입니다.</div>}
         />
       )}
