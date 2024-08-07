@@ -5,6 +5,7 @@ interface CommonModalProps {
   setToggle: React.Dispatch<React.SetStateAction<boolean>>;
   goBack: boolean;
   content: ReactNode;
+  close: boolean;
 }
 
 const modalContainer =
@@ -18,7 +19,12 @@ const modalContent =
 
 const closeButton = 'absolute cursor-pointer w-26.26 h-26.26';
 
-const CommonModal = ({ setToggle, goBack, content }: CommonModalProps) => {
+const CommonModal = ({
+  setToggle,
+  goBack,
+  close,
+  content,
+}: CommonModalProps) => {
   return (
     <div className={modalContainer}>
       <div onClick={() => setToggle(false)} className={modalOverlay}>
@@ -29,11 +35,13 @@ const CommonModal = ({ setToggle, goBack, content }: CommonModalProps) => {
               className={`${closeButton} top-[26px] left-[26px]`}
             />
           )}
-          <img
-            onClick={() => setToggle(false)}
-            src={'/icon/icon_close_x.svg'}
-            className={`${closeButton} top-[26px] right-[26px]`}
-          />
+          {close && (
+            <img
+              onClick={() => setToggle(false)}
+              src={'/icon/icon_close_x.svg'}
+              className={`${closeButton} top-[26px] right-[26px]`}
+            />
+          )}
           {content}
         </div>
       </div>
