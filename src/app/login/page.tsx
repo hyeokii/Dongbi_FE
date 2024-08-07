@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import Logo from '@/public/icon/icon_logo.svg';
 import coins from '@/public/icon/icon_coins.svg';
 import InputText from '@/src/components/common/InputText';
-import emailIcon from '@/public/icon/icon_email.svg';
-import pwdIcon from '@/public/icon/icon_pwd.svg';
+import Email from '@/src/app/shared/components/IconComponents/IconEmail';
+import Pwd from '@/src/app/shared/components/IconComponents/IconPwd';
 import Link from 'next/link';
 import CommonButton from '@/src/components/common/CommonButton';
 
@@ -23,6 +23,10 @@ const Login = () => {
 
   const handleLogin = () => {
     alert(`Logging in with: ${email}, ${password}`);
+  };
+
+  const handleSignup = () => {
+    alert('회원가입 페이지 이동');
   };
 
   return (
@@ -56,7 +60,9 @@ const Login = () => {
           variant={'orange'}
           shadow={'lg'}
           label="이메일"
-          icon={<Image src={emailIcon} width={16} height={16} alt="email" />}
+          icon={
+            <Email className="icon w-[20px] h-[20px] fill-none text-custom-gray-2" />
+          }
           additionalClass="mb-5 w-[331px] h-[45px]"
           id="email"
           value={email}
@@ -67,7 +73,9 @@ const Login = () => {
           variant={'orange'}
           shadow={'lg'}
           label="비밀번호"
-          icon={<Image src={pwdIcon} width={16} height={16} alt="pwd" />}
+          icon={
+            <Pwd className="icon w-[20px] h-[20px] fill-none text-custom-gray-2" />
+          }
           additionalClass=" w-[331px] h-[45px]"
           id="password"
           value={password}
@@ -88,6 +96,16 @@ const Login = () => {
         fontSize="sm"
         additionalClass="w-[331px] h-[45px] mt-6"
         onClickEvent={handleLogin}
+      />
+      <CommonButton
+        text="회원가입"
+        bgColor="orange"
+        textColor="white"
+        radius="moreRounded"
+        shadowColor="lightShadow"
+        fontSize="sm"
+        additionalClass="w-[331px] h-[45px] mt-6"
+        onClickEvent={handleSignup}
       />
     </div>
   );

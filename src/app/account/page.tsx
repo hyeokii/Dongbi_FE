@@ -5,13 +5,14 @@ import Header from '@/src/app/shared/Header';
 import InputText from '@/src/components/common/InputText';
 import user from '@/public/icon/icon_user.svg';
 import CommonButton from '@/src/components/common/CommonButton';
-import pwd from '@/public/icon/icon_pwd.svg';
-import graypwd from '@/public/icon/icon_pwd_gray.svg';
-import email from '@/public/icon/icon_email.svg';
-import grayemail from '@/public/icon/icon_email_gray.svg';
-import warning from '@/public/icon/icon_warning.svg';
+import Pwd from '@/src/app/shared/components/IconComponents/IconPwd';
+import Email from '@/src/app/shared/components/IconComponents/IconEmail';
+import IconWarning from '../shared/components/IconComponents/IconWarning';
+import CommonModal from '@/src/components/common/CommonModal';
+import withdraw from '@/public/icon/icon_withdraw.svg';
 
 const page = () => {
+  const [toggle, setToggle] = useState(false);
   const [formValues, setFormValues] = useState({
     clubName: '',
     prevPwd: '',
@@ -25,6 +26,10 @@ const page = () => {
       ...formValues,
       [id]: value,
     });
+  };
+
+  const handleWithDraw = () => {
+    alert('탈퇴 완료');
   };
 
   return (
@@ -70,7 +75,9 @@ const page = () => {
                 variant={'default'}
                 shadow={'default'}
                 label="기존 비밀번호"
-                icon={<Image src={pwd} width={12} height={16} alt="icon" />}
+                icon={
+                  <Pwd className="icon w-[16px] h-[16px] fill-none text-black" />
+                }
                 additionalClass="w-[331px]"
                 onChange={handleChange}
               />
@@ -81,7 +88,9 @@ const page = () => {
                 variant={'default'}
                 shadow={'default'}
                 label="새 비밀번호"
-                icon={<Image src={pwd} width={12} height={16} alt="icon" />}
+                icon={
+                  <Pwd className="icon w-[16px] h-[16px] fill-none text-black" />
+                }
                 additionalClass="w-[331px]"
                 onChange={handleChange}
               />
@@ -94,12 +103,14 @@ const page = () => {
                     variant={'default'}
                     shadow={'default'}
                     label="새 비밀번호 확인"
-                    icon={<Image src={pwd} width={12} height={16} alt="icon" />}
+                    icon={
+                      <Pwd className="icon w-[16px] h-[16px] fill-none text-black" />
+                    }
                     additionalClass="w-[331px]"
                     onChange={handleChange}
                   />
                   <div className="absolute right-2 top-0 h-full flex justify-center items-center">
-                    <Image src={warning} width={16} height={16} alt="warning" />
+                    <IconWarning className="w-[20px] h-[20px]" />
                   </div>
                 </div>
 
@@ -131,19 +142,14 @@ const page = () => {
                     shadow={'default'}
                     label="기존 이메일 주소"
                     icon={
-                      <Image
-                        src={grayemail}
-                        width={16}
-                        height={16}
-                        alt="icon"
-                      />
+                      <Email className="icon w-[16px] h-[16px] fill-none text-custom-gray" />
                     }
                     disable={true}
                     additionalClass="w-[331px] cursor-not-allowed bg-gray-200"
                     onChange={handleChange}
                   />
                   <div className="absolute right-2 top-0 h-full text-[14px] flex justify-center items-center">
-                    <Image src={graypwd} width={12} height={16} alt="pwd" />
+                    <Pwd className="icon w-[16px] h-[16px] fill-non text-custom-gray" />
                   </div>
                 </div>
                 <CommonButton
@@ -167,11 +173,13 @@ const page = () => {
                   variant={'default'}
                   shadow={'default'}
                   label="새 이메일 주소"
-                  icon={<Image src={email} width={16} height={16} alt="icon" />}
+                  icon={
+                    <Email className="icon w-[16px] h-[16px] fill-none text-black" />
+                  }
                   additionalClass="w-[331px]"
                   onChange={handleChange}
                 />
-                <button className="absolute right-2 top-0 h-full text-[14px] text-gray-400">
+                <button className="absolute right-2 top-0 h-full text-[14px] text-custom-gray-4">
                   인증
                 </button>
               </div>
@@ -183,7 +191,9 @@ const page = () => {
                   variant={'default'}
                   shadow={'default'}
                   label="인증 번호"
-                  icon={<Image src={email} width={16} height={16} alt="icon" />}
+                  icon={
+                    <Email className="icon w-[16px] h-[16px] fill-none text-black" />
+                  }
                   additionalClass="w-[331px]"
                   onChange={handleChange}
                 />
@@ -198,11 +208,49 @@ const page = () => {
             <button
               className="text-[#8E8E93] text-[20px]"
               onClick={() => {
-                alert(`buttonClicked : 버튼이 클릭되었습니다`);
+                setToggle(true);
               }}
             >
               회원 탈퇴
             </button>
+            {toggle && (
+              <CommonModal
+                setToggle={setToggle}
+                goBack={true}
+                content={
+                  <div className="flex flex-col items-center">
+                    <Image src={withdraw} alt="withdraw" width={39} />
+                    <div className="flex flex-col items-center text-[24px] leading-8 mt-[22px]">
+                      <span>정말 탈퇴하시겠습니까?</span>
+                      <span>탈퇴하시면 입력하신 모든 데이터도 삭제됩니다.</span>
+                    </div>
+                    <div className="flex gap-[18px] mt-[84px]">
+                      <CommonButton
+                        text="취소"
+                        bgColor="white"
+                        textColor="black"
+                        radius="lessRounded"
+                        shadowColor="lightShadow"
+                        borderColor="lightBorder"
+                        fontSize="sm"
+                        additionalClass="w-[249px] h-[62px]"
+                        onClickEvent={() => {}}
+                      />
+                      <CommonButton
+                        text="회원 탈퇴"
+                        bgColor="orange"
+                        textColor="white"
+                        radius="lessRounded"
+                        shadowColor="mediumShadow"
+                        fontSize="sm"
+                        additionalClass="w-[249px] h-[62px]"
+                        onClickEvent={handleWithDraw}
+                      />
+                    </div>
+                  </div>
+                }
+              />
+            )}
           </div>
         </div>
       </div>
