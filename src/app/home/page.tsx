@@ -4,12 +4,12 @@ import Header from '../shared/Header';
 import UpperBox from './components/UpperBox';
 import AddMinusLog from './components/AddMinusLog';
 import CommonModal from '@/src/components/common/CommonModal';
-import MinusModal from './components/MinusModal';
-import PlusModal from './components/PlusModal';
+import PlusModal from './components/PlusModal/PlusModal';
+import MinusModal from './components/MinusModal/MinusModal';
 
 const Home = () => {
   const [addModalToggle, setAddModalToggle] = useState(false);
-  const [minusModalToggle, setMinusModalToggle] = useState(false);
+  const [minusModalToggle, setMinusModalToggle] = useState(true);
 
   return (
     <div className="w-full min-w-[800px] pb-[15%] justify-center items-center flex flex-col">
