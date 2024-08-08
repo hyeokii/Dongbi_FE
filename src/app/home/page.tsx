@@ -8,7 +8,7 @@ import PlusModalRouter from './components/PlusModal/PlusModalRouter';
 import MinusModalRouter from './components/MinusModal/MinusModalRouter';
 
 const Home = () => {
-  const [addModalToggle, setAddModalToggle] = useState(true);
+  const [addModalToggle, setAddModalToggle] = useState(false);
   const [minusModalToggle, setMinusModalToggle] = useState(false);
 
   return (
