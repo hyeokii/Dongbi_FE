@@ -11,7 +11,7 @@ const modalContainer =
   'fixed w-full h-full top-0 left-0 z-[9999] overflow-auto';
 
 const modalOverlay =
-  'absolute  top-0 left-0 w-full h-[calc(100%_+_400px)] bg-black bg-opacity-50';
+  'absolute  top-0 left-0 w-full h-[calc(100%_+_600px)] bg-black bg-opacity-50';
 
 const modalContent =
   'relative mx-auto mt-[100px] w-[768px] min-h-[300px] px-[58px] py-[57.26px] bg-white rounded-lg font-noto-sans-kr text-base flex flex-col justify-center items-center z-50';

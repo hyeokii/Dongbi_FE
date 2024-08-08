@@ -56,7 +56,7 @@ export default function Home() {
           textColor="white"
           radius="moreRounded"
           shadowColor="lightShadow"
-          fontSize={16}
+          fontSize="lg"
           additionalClass="w-[197px] h-[45px] "
           onClickEvent={() => {
             setButtonClicked(!buttonClicked);
@@ -70,7 +70,7 @@ export default function Home() {
           radius="moreRounded"
           shadowColor="lightShadow"
           borderColor="lightBorder"
-          fontSize={16}
+          fontSize="lg"
           additionalClass="w-[197px] h-[45px]"
           onClickEvent={() => {
             setButtonClicked(!buttonClicked);
@@ -83,7 +83,7 @@ export default function Home() {
           textColor="white"
           radius="moreRounded"
           shadowColor="lightShadow"
-          fontSize={14}
+          fontSize="sm"
           additionalClass="w-[71px] h-[36px]"
           onClickEvent={() => {
             setButtonClicked(!buttonClicked);
@@ -97,7 +97,7 @@ export default function Home() {
           radius="moreRounded"
           shadowColor="lightShadow"
           borderColor="lightBorder"
-          fontSize={14}
+          fontSize="sm"
           additionalClass="w-[71px] h-[36px] "
           onClickEvent={() => {
             setButtonClicked(!buttonClicked);

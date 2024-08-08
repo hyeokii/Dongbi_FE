@@ -4,12 +4,12 @@ import Header from '../shared/Header';
 import UpperBox from './components/UpperBox';
 import AddMinusLog from './components/AddMinusLog';
 import CommonModal from '@/src/components/common/CommonModal';
-import PlusModal from './components/PlusModal/PlusModal';
-import MinusModal from './components/MinusModal/MinusModal';
+import PlusModalRouter from './components/PlusModal/PlusModalRouter';
+import MinusModalRouter from './components/MinusModal/MinusModalRouter';
 
 const Home = () => {
-  const [addModalToggle, setAddModalToggle] = useState(false);
-  const [minusModalToggle, setMinusModalToggle] = useState(true);
+  const [addModalToggle, setAddModalToggle] = useState(true);
+  const [minusModalToggle, setMinusModalToggle] = useState(false);
 
   return (
     <div className="w-full min-w-[800px] pb-[15%] justify-center items-center flex flex-col">
@@ -23,14 +23,14 @@ const Home = () => {
         <CommonModal
           setToggle={setAddModalToggle}
           goBack={false}
-          content={<PlusModal />}
+          content={<PlusModalRouter setAddModalToggle={setAddModalToggle} />}
         />
       )}
       {minusModalToggle && (
         <CommonModal
           setToggle={setMinusModalToggle}
           goBack={false}
-          content={<MinusModal />}
+          content={<MinusModalRouter />}
         />
       )}
     </div>
