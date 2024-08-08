@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import ClubMember from './ClubMember';
 import CommonButton from '@/src/components/common/CommonButton';
-import warning from '@/public/icon/icon_warning.svg';
-import Image from 'next/image';
 import IconWarning from '../../shared/components/IconComponents/IconWarning';
 
 interface RowData {

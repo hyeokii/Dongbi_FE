@@ -59,6 +59,7 @@ const ClubMember = ({
             <Checkbox
               isDisabled={!isEditing}
               isChecked={rowData[header] as boolean}
+              isSquare={isEditing}
               onChange={(event) => handleCheckboxChange(header, event)}
             />
           ) : isEditing &&
