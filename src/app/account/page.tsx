@@ -10,9 +10,11 @@ import Email from '@/src/app/shared/components/IconComponents/IconEmail';
 import IconWarning from '../shared/components/IconComponents/IconWarning';
 import CommonModal from '@/src/components/common/CommonModal';
 import withdraw from '@/public/icon/icon_withdraw.svg';
+import { useRouter } from 'next/navigation';
 
 const page = () => {
   const [toggle, setToggle] = useState(false);
+  const router = useRouter();
   const [formValues, setFormValues] = useState({
     clubName: '',
     prevPwd: '',
@@ -30,6 +32,7 @@ const page = () => {
 
   const handleWithDraw = () => {
     alert('탈퇴 완료');
+    router.push('/login');
   };
 
   return (
@@ -216,7 +219,8 @@ const page = () => {
             {toggle && (
               <CommonModal
                 setToggle={setToggle}
-                goBack={true}
+                goBack={false}
+                close={false}
                 content={
                   <div className="flex flex-col items-center">
                     <Image src={withdraw} alt="withdraw" width={39} />
@@ -234,7 +238,9 @@ const page = () => {
                         borderColor="lightBorder"
                         fontSize="sm"
                         additionalClass="w-[249px] h-[62px]"
-                        onClickEvent={() => {}}
+                        onClickEvent={() => {
+                          setToggle(false);
+                        }}
                       />
                       <CommonButton
                         text="회원 탈퇴"
