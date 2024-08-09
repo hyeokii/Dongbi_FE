@@ -10,9 +10,10 @@ interface InputProps {
   additionalClass?: string;
   type: string;
   id: string;
-  value: any;
+  value?: any;
   disable?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 export const InputVariants = cva(
@@ -47,6 +48,7 @@ const InputText = ({
   value,
   disable = false,
   onChange,
+  onKeyDown,
 }: InputProps) => {
   return (
     <div className={cn(InputVariants({ variant, shadow }), additionalClass)}>
