@@ -62,6 +62,7 @@ const CommonButton = ({
 }: CommonButtonProps) => {
   return (
     <button
+      type="button"
       onClick={onClickEvent}
       className={cn(
         buttonVariants({
