@@ -3,6 +3,7 @@ import cn from '../../utils/cn';
 import { cva } from 'class-variance-authority';
 
 interface InputProps {
+  inputStyle?: string;
   variant?: 'default' | 'orange';
   shadow?: 'default' | 'lg';
   label: string;
@@ -10,9 +11,10 @@ interface InputProps {
   additionalClass?: string;
   type: string;
   id: string;
-  value: any;
+  value?: any;
   disable?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 export const InputVariants = cva(
@@ -38,6 +40,7 @@ export const InputVariants = cva(
 
 const InputText = ({
   type,
+  inputStyle,
   variant,
   shadow,
   label,
@@ -47,6 +50,7 @@ const InputText = ({
   value,
   disable = false,
   onChange,
+  onKeyDown,
 }: InputProps) => {
   return (
     <div className={cn(InputVariants({ variant, shadow }), additionalClass)}>
@@ -58,8 +62,8 @@ const InputText = ({
         value={value}
         className={
           disable
-            ? 'outline-none text-sm bg-gray-200 cursor-not-allowed'
-            : 'outline-none text-sm '
+            ? 'outline-none text-sm bg-gray-200 cursor-not-allowed' + inputStyle
+            : 'outline-none text-sm ' + inputStyle
         }
         onChange={onChange}
         disabled={disable}

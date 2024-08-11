@@ -2,9 +2,9 @@
 import Image from 'next/image';
 import Logout from '@/public/icon/icon_logout.svg';
 import React from 'react';
-import IconPerson from './IconComponents/IconPerson';
-import IconGenerationManage from './IconComponents/IconGenerationManage';
-import IconNewGeneration from './IconComponents/IconNewGeneration';
+import IconPerson from '../../../components/IconComponents/IconPerson';
+import IconGenerationManage from '../../../components/IconComponents/IconGenerationManage';
+import IconNewGeneration from '../../../components/IconComponents/IconNewGeneration';
 
 const HamburgerMenuContainer =
   'absolute right-[20px] w-[199px] pt-[7px] pb-[7px] pl-[6px] pr-[6px] bg-white rounded-[5px] flex flex-col border border-custom-gray-5 drop-shadow-lg z-10';
