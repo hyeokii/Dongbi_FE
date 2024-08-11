@@ -22,6 +22,7 @@ const config: Config = {
         'custom-shadow-light': '#FFF7E0',
         'custom-gray': '#8E8E93',
         'custom-gray-2': '#AEAEB2',
+        'custom-gray-4': '#BDBDBD',
         'custom-gray-5': '#E5E5EA',
       },
       fontSize: {
@@ -55,7 +56,7 @@ const config: Config = {
       backgroundImage: {
         'square-check-yes': "url('/icon/icon_square_check_Y.svg')",
         'square-check-no': "url('/icon/icon_square_check_N.svg')",
-        'circle-check-yes': "url('@/public/icon/icon_square_check_Y.svg')",
+        'circle-check-yes': "url('@/public/icon/icon_circle_check_Y.svg')",
       },
     },
   },
