@@ -38,14 +38,21 @@ const initialData: RowData[] = [
   },
 ];
 
-// 모든 행의 열 헤더를 추출합니다.
-const headers = Object.keys(initialData[0]);
+const initialHeaders = Object.keys(initialData[0]);
 
-const ClubMemberList: React.FC = () => {
+const ClubMemberList = () => {
   const [data, setData] = useState(initialData);
   const [originalData, setOriginalData] = useState(initialData); // 원본 데이터 상태
   const [updateData, setUpdateData] = useState(initialData);
-  const [isEditing, setIsEditing] = useState<boolean>(false);
+
+  const [headers, setHeaders] = useState(initialHeaders);
+  const [isEditing, setIsEditing] = useState(false);
+
+  const [newColumnName, setNewColumnName] = useState('');
+  const [newColumnCost, setNewColumnCost] = useState('');
+  const [columnCosts, setColumnCosts] = useState({});
+
+  const [error, setError] = useState<string>('');
 
   // 특정 행을 업데이트하는 함수
   const handleRowUpdate = (index: number, updatedRow: RowData) => {
@@ -65,6 +72,7 @@ const ClubMemberList: React.FC = () => {
   const handleCancelClick = () => {
     setData([...originalData]); // 원본 데이터로 복원
     setUpdateData([...originalData]);
+    setHeaders([...initialHeaders]);
     setIsEditing(false);
   };
 
@@ -75,11 +83,35 @@ const ClubMemberList: React.FC = () => {
 
   // 새로운 행을 추가하는 함수
   const handleAddMember = () => {
-    const newUpdateData = [
-      ...updateData,
-      { 이름: '', col1: false, col2: false, col3: false, col4: false },
-    ];
+    const newMember: RowData = { 이름: '' };
+    headers.forEach((header) => {
+      if (header !== '이름') {
+        newMember[header] = false;
+      }
+    });
+
+    const newUpdateData = [...updateData, newMember];
     setUpdateData(newUpdateData);
+  };
+
+  // 새로운 열을 추가하는 함수
+  const handleAddColumn = () => {
+    if (headers.includes(newColumnName)) {
+      setError('이미 존재하는 열 이름입니다.');
+    } else if (newColumnName.trim() === '') {
+      setError('열 이름을 입력해주세요.');
+    } else {
+      const newUpdateData = updateData.map((row) => ({
+        ...row,
+        [newColumnName]: false,
+      }));
+      setUpdateData(newUpdateData);
+      setHeaders([...headers, newColumnName]);
+      setColumnCosts({ ...columnCosts, [newColumnName]: newColumnCost });
+      setNewColumnName('');
+      setNewColumnCost('');
+      setError('');
+    }
   };
 
   return (
@@ -122,7 +154,7 @@ const ClubMemberList: React.FC = () => {
         )}
       </div>
       {isEditing && (
-        <div className="relative -top-10 left-48">
+        <div className="relative -top-10 left-24">
           <div className="absolute bg-primary px-3 py-4 rounded shadow-lg text-[10px] text-white">
             동아리원 이름을 클릭하면
             <br />
@@ -137,7 +169,12 @@ const ClubMemberList: React.FC = () => {
           <thead className="py-[15px] border border-[#D1D1D1]">
             <tr>
               {headers.map((header, index) => (
-                <th key={index} className="bg-[#F7F7F7] p-3 text-[14px]">
+                <th
+                  key={index}
+                  className={`bg-[#F7F7F7] p-3 text-[14px] ${
+                    header === '이름' ? 'w-[200px]' : ''
+                  }`}
+                >
                   {header}
                 </th>
               ))}
@@ -159,7 +196,34 @@ const ClubMemberList: React.FC = () => {
         </table>
       </div>
       {isEditing && (
-        <div className="flex justify-center mt-8">
+        <div className="flex flex-col items-center mt-8 space-y-4">
+          <div className="flex items-center space-x-4">
+            <input
+              type="text"
+              value={newColumnName}
+              onChange={(e) => setNewColumnName(e.target.value)}
+              placeholder="새로운 열 이름"
+              className="border border-gray-300 py-2 px-4"
+            />
+            <input
+              type="number"
+              value={newColumnCost}
+              onChange={(e) => setNewColumnCost(e.target.value)}
+              placeholder="비용"
+              className="border border-gray-300 py-2 px-4"
+            />
+            <CommonButton
+              text="+ 열 추가"
+              bgColor="orange"
+              textColor="white"
+              radius="moreRounded"
+              shadowColor="mediumShadow"
+              fontSize="sm"
+              additionalClass="w-[197px] h-[45px]"
+              onClickEvent={handleAddColumn}
+            />
+          </div>
+          {error && <p className="text-red-500">{error}</p>}
           <CommonButton
             text="+ 동아리원 추가"
             bgColor="orange"
