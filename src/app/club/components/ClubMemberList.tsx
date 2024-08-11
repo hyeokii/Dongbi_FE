@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ClubMember from './ClubMember';
 import CommonButton from '@/src/components/common/CommonButton';
-import IconWarning from '../../shared/components/IconComponents/IconWarning';
+import IconWarning from '../../../components/IconComponents/IconWarning';
 
 interface RowData {
   [key: string]: boolean | string;
