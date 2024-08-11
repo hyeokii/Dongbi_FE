@@ -56,8 +56,8 @@ const config: Config = {
       backgroundImage: {
         'square-check-yes': "url('/icon/icon_square_check_Y.svg')",
         'square-check-no': "url('/icon/icon_square_check_N.svg')",
-        'circle-check-yes': "url('@/public/icon/icon_square_check_Y.svg')",
         'custom-gradient': 'linear-gradient(to bottom, #FFF5F0, #FFFFFF)',
+        'circle-check-yes': "url('@/public/icon/icon_circle_check_Y.svg')",
       },
     },
   },
